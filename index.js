@@ -19,11 +19,16 @@ function createRecipe() {
 }
 
 function displayEditForm() {
-  var descriptionText = document.getElementById('recipeDescription').value
+  var descriptionText = document.getElementById('recipeDescription').innerText
   var ingredientsNodeList = document.getElementsByName('ingredientsList')
-  var nameText = document.getElementById('recipeName').value
+  var nameText = document.getElementById('recipeName').innerText
   var formTemplate = Handlebars.compile(document.getElementById('recipe-form-template').innerHTML)
-  
+  // var recipeTemplate = Handlebars.compile(document.getElementById('recipe-template').innerHTML)
+  document.getElementsByTagName("main")[0].innerHTML = formTemplate({name: nameText, ingredients: ingredientsNodeList, description: descriptionText})
+
+}
+function updateRecipe() {
+   createRecipe() 
 }
 function init() {
   //put any page initialization/handlebars initialization here
