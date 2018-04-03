@@ -28,8 +28,8 @@ function displayEditForm() {
 
 }
 function updateRecipe() {
-   createRecipe() 
-}
+  //  createRecipe() 
+// }
 function init() {
   //put any page initialization/handlebars initialization here
   initForm();
